@@ -19,7 +19,7 @@ public class Main {
 
     static void runTests(Picture picture) {
 
-        SimpleColor[] correctResultsArray = {SimpleColor.GREEN, SimpleColor.ORANGE, SimpleColor.WHITE,
+        SimpleColor [] correctResultsArray = {SimpleColor.GREEN, SimpleColor.ORANGE, SimpleColor.WHITE,
                 SimpleColor.YELLOW, SimpleColor.GREEN, SimpleColor.WHITE};
 
         Point [] arrayOfCoordinate = { new Point(5,0.5), new Point(-6,2.5), new Point(-7,4),
