@@ -17,7 +17,7 @@ public class Main {
         printColorForPoint(x, y, color);
     }
 
-    static void runTests(Picture picture) {
+    private static void runTests(Picture picture) {
 
         SimpleColor [] correctResultsArray = {SimpleColor.GREEN, SimpleColor.ORANGE, SimpleColor.WHITE,
                 SimpleColor.YELLOW, SimpleColor.GREEN, SimpleColor.WHITE};
@@ -39,8 +39,7 @@ public class Main {
         }
     }
 
-    static void printTest(SimpleColor currentResults, SimpleColor correctResults, String testResult)
-    {
+    private static void printTest(SimpleColor currentResults, SimpleColor correctResults, String testResult) {
         System.out.printf("The result is %s: %s is %s \n", testResult, currentResults, correctResults);
     }
 
