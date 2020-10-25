@@ -34,6 +34,7 @@ public class Main {
                 printTest(currentResults, correctResults, "successful");
             } else {
                 printTest(currentResults, correctResults, "wrong");
+                System.exit(-1);
             }
         }
     }
