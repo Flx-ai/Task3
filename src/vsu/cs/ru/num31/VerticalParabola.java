@@ -1,6 +1,6 @@
 package vsu.cs.ru.num31;
 
-public  class VerticalParabola {
+public class VerticalParabola {
 
     public double x0;
     public double y0;
