@@ -9,7 +9,7 @@ public class Main {
                                         new Circle(-6,4,2));
         if (runTests(picture) == false) {
             System.out.println("\n" + "There are errors in program");
-            return ;
+            return;
         }
 
         double x = readCoordinate('x');
