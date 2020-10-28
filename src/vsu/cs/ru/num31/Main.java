@@ -6,18 +6,19 @@ public class Main {
     public static void main(String[] args) {
 
         Picture picture = new Picture(new VerticalParabola(5,1,-1), new Line(0,3,0),
-                new Circle(-6,4,2));
-
-        if (runTests(picture) == -1) return;
+                                        new Circle(-6,4,2));
+        if (runTests(picture) == false) {
+            System.out.println("\n" + "There are errors in program");
+            return ;
+        }
 
         double x = readCoordinate('x');
         double y = readCoordinate('y');
-
         SimpleColor color = picture.getColor(x,y);
         printColorForPoint(x, y, color);
     }
 
-    private static int runTests(Picture picture) {
+    private static boolean runTests(Picture picture) {
 
         SimpleColor[] correctResultsArray = {SimpleColor.GREEN, SimpleColor.ORANGE, SimpleColor.WHITE,
                 SimpleColor.YELLOW, SimpleColor.GREEN, SimpleColor.WHITE};
@@ -25,8 +26,9 @@ public class Main {
         Point[] arrayOfCoordinate = {new Point(5, 0.5), new Point(-6, 2.5), new Point(-7, 4),
                 new Point(8, 5), new Point(3, -9), new Point(-6, 5) };
 
-        for (int i = 0; i < arrayOfCoordinate.length; i++) {
+        boolean result = true;
 
+        for (int i = 0; i < arrayOfCoordinate.length; i++) {
             SimpleColor currentResults = picture.getColor(arrayOfCoordinate[i].getX(), arrayOfCoordinate[i].getY());
             SimpleColor correctResults = correctResultsArray[i];
 
@@ -34,10 +36,10 @@ public class Main {
                 printTest(currentResults, correctResults, "successful");
             } else {
                 printTest(currentResults, correctResults, "wrong");
-                return -1;
+                result = false;
             }
         }
-        return 0;
+        return result;
     }
 
     private static void printTest(SimpleColor currentResults, SimpleColor correctResults, String testResult) {
