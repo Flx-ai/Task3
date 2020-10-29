@@ -33,17 +33,18 @@ public class Main {
             SimpleColor correctResults = correctResultsArray[i];
 
             if (currentResults == correctResults) {
-                printTest(currentResults, correctResults, "successful");
+                printTest(arrayOfCoordinate[i].getX(), arrayOfCoordinate[i].getY(), currentResults, correctResults, "successful");
             } else {
-                printTest(currentResults, correctResults, "wrong");
+                printTest(arrayOfCoordinate[i].getX(), arrayOfCoordinate[i].getY(), currentResults, correctResults, "wrong");
                 result = false;
             }
         }
         return result;
     }
 
-    private static void printTest(SimpleColor currentResults, SimpleColor correctResults, String testResult) {
-        System.out.printf("The result is %s: %s is %s \n", testResult, currentResults, correctResults);
+    private static void printTest (double x, double y, SimpleColor currentResults, SimpleColor correctResults, String testResult) {
+        System.out.printf("For coordinates (%.1f; %.1f) the result is %s: %s is %s \n",
+                x, y, testResult, currentResults, correctResults);
     }
 
     private static double readCoordinate(char name){
@@ -55,5 +56,4 @@ public class Main {
     private static void printColorForPoint(double x, double y, SimpleColor color) {
         System.out.printf("(%.1f, %.1f) -> %S%n", x, y, color);
     }
-
 }
