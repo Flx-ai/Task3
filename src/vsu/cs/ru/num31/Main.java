@@ -27,7 +27,7 @@ public class Main {
         Point[] arrayOfCoordinate = {new Point(5.3, 0.5), new Point(-6, 2.5), new Point(-7, 4),
                 new Point(8, 5), new Point(3, -9), new Point(-6, 5) };
 
-        boolean result = true;
+        boolean testResult = true;
 
         for (int i = 0; i < arrayOfCoordinate.length; i++) {
             SimpleColor currentResults = picture.getColor(arrayOfCoordinate[i].getX(), arrayOfCoordinate[i].getY());
@@ -37,10 +37,10 @@ public class Main {
                 printTest(arrayOfCoordinate[i].getX(), arrayOfCoordinate[i].getY(), currentResults, correctResults, "successful");
             } else {
                 printTest(arrayOfCoordinate[i].getX(), arrayOfCoordinate[i].getY(), currentResults, correctResults, "wrong");
-                result = false;
+                testResult = false;
             }
         }
-        return result;
+        return testResult;
     }
 
     private static void printTest (double x, double y, SimpleColor currentResults, SimpleColor correctResults, String testResult) {
